@@ -21,10 +21,11 @@
   <hr>
   <div class="row card-content">
     <div class="card" *ngFor="let hotel of hotels">
-      <img [src]="hotel.imageUrl" title="hotel.hotelName | uppercase" class="card-img-top" [alt]="hotel.hotelName">
+      <img [src]="hotel.imageUrl" [title]="hotel.hotelName | uppercase" class="card-img-top" [alt]="hotel.hotelName">
       <div class="card-body">
         <h5 class="card-title">{{hotel.hotelName}}</h5>
         <p class="card-text">{{hotel.description}}</p>
+        <p class="card-text">{{hotel.price | currency : 'EUR' : 'symbol' : '1.2-2' : 'fr'}}</p>
         <span class="badge rounded-pill text-bg-primary" *ngIf="showBadge">Nouveau</span>
       </div>
     </div>
