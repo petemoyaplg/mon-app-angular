@@ -10,7 +10,7 @@
   <div class="my-2">
     <div class="row">
       <div class="col-md-4">
-        <span>Filtre actuel : </span>
+        <span>{{hotelFilter ? 'Filtre actuel :' : ''}}</span>
         <b>{{ hotelFilter }} </b>
       </div>
       <div class="col-md-8 form-group">
@@ -20,12 +20,13 @@
   </div>
   <hr>
   <div class="row card-content">
-    <div class="card" *ngFor="let hotel of hotels">
+    <div class="card" *ngFor="let hotel of filteredHotels">
       <img [src]="hotel.imageUrl" [title]="hotel.hotelName | uppercase" class="card-img-top" [alt]="hotel.hotelName">
       <div class="card-body">
         <h5 class="card-title">{{hotel.hotelName}}</h5>
         <p class="card-text">{{hotel.description}}</p>
-        <p class="card-text">{{hotel.price | currency : 'EUR' : 'symbol' : '1.2-2' : 'fr'}}</p>
+        <p class="card-text">{{hotel.price | currency : 'EUR' : 'symbol' : '1.2-2' : 'fr' | replaceComma }}</p>
+        <app-star-rating [rating]="hotel.rating" (starRatingClicked)="receiveRatingClick($event)"></app-star-rating>
         <span class="badge rounded-pill text-bg-primary" *ngIf="showBadge">Nouveau</span>
       </div>
     </div>
