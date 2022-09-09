@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { StarRatingComponents } from './shared/components/star-rating/star-rating.component';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -19,7 +20,8 @@ registerLocaleData(localeFr, 'fr');
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    PdfViewerModule
+    HttpClientModule,
+    PdfViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

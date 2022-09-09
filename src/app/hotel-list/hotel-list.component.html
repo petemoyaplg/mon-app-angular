@@ -18,6 +18,7 @@
       </div>
     </div>
   </div>
+  <div *ngIf="!! receivedRating" class="alert alert-primary">{{receivedRating}}</div>
   <hr>
   <div class="row card-content">
     <div class="card" *ngFor="let hotel of filteredHotels">
