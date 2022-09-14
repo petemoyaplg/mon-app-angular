@@ -8,14 +8,16 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HotelListComponent } from './hotel-list/hotel-list.component';
+import { HotelListComponent } from './hotel/hotel-list/hotel-list.component';
 import { StarRatingComponents } from './shared/components/star-rating/star-rating.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { HotelDetailComponent } from './hotel/hotel-detail/hotel-detail.component';
 
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
-  declarations: [AppComponent, HotelListComponent, ReplaceCommaPipe, StarRatingComponents],
+  declarations: [AppComponent, HotelListComponent, ReplaceCommaPipe, StarRatingComponents, HomeComponent, HotelDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

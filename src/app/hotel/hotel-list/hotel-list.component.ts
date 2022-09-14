@@ -1,7 +1,9 @@
-import { hotels } from './../tools/hotel-list';
+import { hotels } from '../../tools/hotel-list';
 import { HotelListService } from './hotel-list.service';
 import { Component, OnInit } from '@angular/core';
-import { IHotel } from '../interfaces/IHotel';
+import { IHotel } from '../../interfaces/IHotel';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { throwError } from 'rxjs/internal/observable/throwError';
 // import hotelsData from '../../api/hotels.json';
 
 @Component({
@@ -23,8 +25,21 @@ export class HotelListComponent implements OnInit
   ngOnInit(): void
   {
     this._hotelFilter = '';
-    this.hotels = hotels;
-    this.filteredHotels = this.hotels;
+    this.getHotels();
+  }
+
+  getHotels(): void
+  {
+    this.hotelListService.getHotels().subscribe(
+      (response) =>
+      {
+        this.hotels = this.filteredHotels = response;
+      },
+      (error: HttpErrorResponse) =>
+      {
+        this.handleError(error);
+      }
+    );
   }
 
   public toggleIsNewBadge(): void
@@ -57,5 +72,22 @@ export class HotelListComponent implements OnInit
   {
     this.receivedRating = message;
     console.log(message);
+  }
+
+  private handleError(error: HttpErrorResponse)
+  {
+    if (error.status === 0)
+    {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } else
+    {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `, error.error);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 }
