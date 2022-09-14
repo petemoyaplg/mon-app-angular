@@ -3,14 +3,20 @@
   margin: 0.5rem;
 }
 
-.card-img-top {
-  width: 100%;
+// .row{
+//   align-content: center;
+// }
+img{
+  height: 200px;
 }
-
-.row{
-  align-content: center;
-}
-
-span {
-  padding: 5px;
+// span {
+//   padding: 5px;
+// }
+.card-content{
+  // border: 1px solid black;
+  background-color: rgb(231, 236, 240);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

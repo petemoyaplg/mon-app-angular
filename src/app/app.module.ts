@@ -13,11 +13,13 @@ import { StarRatingComponents } from './shared/components/star-rating/star-ratin
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { HotelDetailComponent } from './hotel/hotel-detail/hotel-detail.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HotelCardComponent } from './hotel/hotel-card/hotel-card.component';
 
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
-  declarations: [AppComponent, HotelListComponent, ReplaceCommaPipe, StarRatingComponents, HomeComponent, HotelDetailComponent],
+  declarations: [AppComponent, HotelListComponent, ReplaceCommaPipe, StarRatingComponents, HomeComponent, HotelDetailComponent, NavbarComponent, HotelCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
