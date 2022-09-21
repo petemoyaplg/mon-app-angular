@@ -4,7 +4,7 @@ import localeFr from '@angular/common/locales/fr';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+// import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +25,7 @@ registerLocaleData(localeFr, 'fr');
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    PdfViewerModule,
+    // PdfViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

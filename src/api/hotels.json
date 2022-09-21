@@ -13,7 +13,7 @@
     "description": "Profitez de la vue sur les montagnes",
     "price": 145.5,
     "imageUrl": "assets/img/the-interior.jpg",
-    "rating": 5
+    "rating": 1.5
   },
   {
     "hotelId": 3,
@@ -21,7 +21,7 @@
     "description": "Séjour complet avec service de voitures",
     "price": 120.12,
     "imageUrl": "assets/img/indoors.jpg",
-    "rating": 4
+    "rating": 3.5
   },
   {
     "hotelId": 4,
@@ -61,6 +61,6 @@
     "description": "Hotel présidentiel",
     "price": 575.12,
     "imageUrl": "assets/img/lobby-d-h-tel-39479289.jpg",
-    "rating": 6.5
+    "rating": 5
   }
 ]
